@@ -9,7 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class PaisesAdapter extends RecyclerView.Adapter<PaisesAdapter.ViewHolderPais> {
 
@@ -39,14 +41,17 @@ public class PaisesAdapter extends RecyclerView.Adapter<PaisesAdapter.ViewHolder
 
             Pais pais = paises.get(position);
 
-            String area = String.valueOf(pais.getArea()).concat(" km²");
-            holder.area_text.setText(String.valueOf(area));
+            String area = NumberFormat.getInstance(Locale.ITALY).format(pais.getArea());
+            area = area.concat(" km²");
+            holder.area_text.setText(area);
             holder.capital_text.setText(pais.getCapital());
             holder.continent_text.setText(pais.getContinent());
             holder.currency_text.setText(pais.getCurrency());
             holder.language_text.setText(pais.getLanguage());
             holder.name_text.setText(pais.getName());
-            holder.population_text.setText(String.valueOf(pais.getPopulation()));
+
+            String population = NumberFormat.getInstance(Locale.FRANCE).format(pais.getPopulation());
+            holder.population_text.setText(population);
 
             holder.icon_image.setImageBitmap(pais.getIcon());
 

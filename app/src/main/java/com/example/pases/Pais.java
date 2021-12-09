@@ -1,5 +1,7 @@
 package com.example.pases;
 
+import android.graphics.Bitmap;
+
 public class Pais {
 
     private int     area;
@@ -7,6 +9,8 @@ public class Pais {
     private String  continent;
     private String  currency;
     private String  description;
+
+    private Bitmap  icon;
 
     //************icon, image, image-author, image-name.***********
 
@@ -17,13 +21,15 @@ public class Pais {
     //*************url****************
 
 
-    public Pais(int area, String capital, String continent, String currency, String description, String language, String name, int population) {
+    public Pais(int area, String capital, String continent, String currency, String description, Bitmap icon, String language, String name, int population) {
 
         this.area = area;
         this.capital = capital;
         this.continent = continent;
         this.currency = currency;
         this.description = description;
+
+        this.icon = icon;
 
         //************icon, image, image-author, image-name.***********
 
@@ -49,6 +55,9 @@ public class Pais {
 
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
+
+    public Bitmap getIcon(){ return icon; }
+    public void setIcon(Bitmap icon){ this.icon = icon; }
 
     public String getLanguage() { return language; }
     public void setLanguage(String language) { this.language = language; }

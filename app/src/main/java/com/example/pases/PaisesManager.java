@@ -1,10 +1,13 @@
 package com.example.pases;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+
 import java.util.ArrayList;
 
 public class PaisesManager {
 
-    public static ArrayList<Pais> getPaisesFromString(String paisesText){
+    public static ArrayList<Pais> getPaisesFromString(Context c, String paisesText){
 
         ArrayList<Pais> paises = new ArrayList<>();
 
@@ -37,9 +40,10 @@ public class PaisesManager {
                 String name = getFieldValueFromText(paisAtual, "name:");
                 int    population = Integer.parseInt(getFieldValueFromText(paisAtual, "population:"));
 
+                String iconName = getFieldValueFromText(paisAtual, "icon:");
+                Bitmap icon = FileUtil.carregarImagem(c.getAssets(),iconName);
 
-
-                Pais pais = new Pais(area, capital, continent, currency, description, language, name, population);
+                Pais pais = new Pais(area, capital, continent, currency, description, icon, language, name, population);
                 paises.add(pais);
 
                 if(end == -1) break;

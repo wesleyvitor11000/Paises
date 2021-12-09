@@ -3,6 +3,7 @@ package com.example.pases;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -38,13 +39,16 @@ public class PaisesAdapter extends RecyclerView.Adapter<PaisesAdapter.ViewHolder
 
             Pais pais = paises.get(position);
 
-            holder.area_text.setText(String.valueOf(pais.getArea()));
+            String area = String.valueOf(pais.getArea()).concat(" km²");
+            holder.area_text.setText(String.valueOf(area));
             holder.capital_text.setText(pais.getCapital());
             holder.continent_text.setText(pais.getContinent());
             holder.currency_text.setText(pais.getCurrency());
             holder.language_text.setText(pais.getLanguage());
             holder.name_text.setText(pais.getName());
             holder.population_text.setText(String.valueOf(pais.getPopulation()));
+
+            holder.icon_image.setImageBitmap(pais.getIcon());
 
         }
 
@@ -65,6 +69,8 @@ public class PaisesAdapter extends RecyclerView.Adapter<PaisesAdapter.ViewHolder
         TextView name_text;
         TextView population_text;
 
+        ImageView icon_image;
+
 
         public ViewHolderPais(@NonNull View itemView) {
             super(itemView);
@@ -76,6 +82,8 @@ public class PaisesAdapter extends RecyclerView.Adapter<PaisesAdapter.ViewHolder
             language_text = itemView.findViewById(R.id.language_text);
             name_text = itemView.findViewById(R.id.name_text);
             population_text = itemView.findViewById(R.id.population_text);
+
+            icon_image = itemView.findViewById(R.id.icon_image);
 
         }
     }

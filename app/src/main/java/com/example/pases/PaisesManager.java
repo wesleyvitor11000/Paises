@@ -37,7 +37,7 @@ public class PaisesManager {
                 String currency = getFieldValueFromText(paisAtual, "currency:");
                 String description = getFieldValueFromText(paisAtual, "description:");
                 String language = getFieldValueFromText(paisAtual, "language:");
-                String name = getFieldValueFromText(paisAtual, "name:");
+                String name = getFieldValueFromText(paisAtual, "\nname:");
                 int    population = Integer.parseInt(getFieldValueFromText(paisAtual, "population:"));
 
                 String iconName = getFieldValueFromText(paisAtual, "icon:");

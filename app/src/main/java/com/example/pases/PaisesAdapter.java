@@ -1,10 +1,13 @@
 package com.example.pases;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,7 +31,7 @@ public class PaisesAdapter extends RecyclerView.Adapter<PaisesAdapter.ViewHolder
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.paises_card, parent, false);
 
-        ViewHolderPais viewHolderPais = new ViewHolderPais(view);
+        ViewHolderPais viewHolderPais = new ViewHolderPais(view, parent.getContext());
 
         return viewHolderPais;
     }
@@ -77,7 +80,7 @@ public class PaisesAdapter extends RecyclerView.Adapter<PaisesAdapter.ViewHolder
         ImageView icon_image;
 
 
-        public ViewHolderPais(@NonNull View itemView) {
+        public ViewHolderPais(@NonNull View itemView, @NonNull Context c) {
             super(itemView);
 
             area_text = itemView.findViewById(R.id.area_text);
@@ -89,6 +92,15 @@ public class PaisesAdapter extends RecyclerView.Adapter<PaisesAdapter.ViewHolder
             population_text = itemView.findViewById(R.id.population_text);
 
             icon_image = itemView.findViewById(R.id.icon_image);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(c, DetalhesActivity.class);
+                    intent.putExtra("PAIS", paises.get(getLayoutPosition()));
+                    c.startActivity(intent);
+                }
+            });
 
         }
     }

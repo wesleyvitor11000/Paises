@@ -2,7 +2,9 @@ package com.example.pases;
 
 import android.graphics.Bitmap;
 
-public class Pais {
+import java.io.Serializable;
+
+public class Pais implements Serializable {
 
     private int     area;
     private String  capital;
@@ -10,7 +12,7 @@ public class Pais {
     private String  currency;
     private String  description;
 
-    private Bitmap  icon;
+    transient private Bitmap  icon;
 
     //************icon, image, image-author, image-name.***********
 

@@ -39,13 +39,15 @@ public class PaisesManager {
                 String language = getFieldValueFromText(paisAtual, "language:");
                 String name = getFieldValueFromText(paisAtual, "\nname:");
                 int    population = Integer.parseInt(getFieldValueFromText(paisAtual, "population:"));
+                String imageFileName = getFieldValueFromText(paisAtual, "\nimage:");;
+                String imageAutor = getFieldValueFromText(paisAtual, "image-author:");
+                String imageName = getFieldValueFromText(paisAtual, "image-name:");
+                String url = getFieldValueFromText(paisAtual, "url:");
 
                 String iconName = getFieldValueFromText(paisAtual, "icon:");
                 Bitmap icon = FileUtil.carregarImagem(c.getAssets(),"icon/" + iconName);
 
-                String imageFileName = getFieldValueFromText(paisAtual, "\nimage:");;
-
-                Pais pais = new Pais(area, capital, continent, currency, description, icon, imageFileName, language, name, population);
+                Pais pais = new Pais(area, capital, continent, currency, description, icon, imageFileName, imageAutor, imageName, language, name, population, url);
                 paises.add(pais);
 
                 if(end == -1) break;

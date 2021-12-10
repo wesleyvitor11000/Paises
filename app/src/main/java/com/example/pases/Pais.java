@@ -15,34 +15,30 @@ public class Pais implements Serializable {
     transient private Bitmap  icon;
 
     private String imageFileName;
-
-    //************icon, image, image-author, image-name.***********
+    private String imageAutor;
+    private String imageName;
 
     private String  language;
     private String  name;
     private int     population;
+    private String  url;
 
-    //*************url****************
 
-
-    public Pais(int area, String capital, String continent, String currency, String description, Bitmap icon, String imageFileName, String language, String name, int population) {
+    public Pais(int area, String capital, String continent, String currency, String description, Bitmap icon, String imageFileName, String imageAutor, String imageName, String language, String name, int population, String url) {
 
         this.area = area;
         this.capital = capital;
         this.continent = continent;
         this.currency = currency;
         this.description = description;
-
         this.icon = icon;
         this.imageFileName = imageFileName;
-
-        //************icon, image, image-author, image-name.***********
-
+        this.imageAutor = imageAutor;
+        this.imageName = imageName;
         this.language = language;
         this.name = name;
         this.population = population;
-
-        //***********url************
+        this.url = url;
 
     }
 
@@ -67,6 +63,12 @@ public class Pais implements Serializable {
     public String getImageFileName(){ return imageFileName; }
     public void setImageFileName(String imageFileName){ this.imageFileName = imageFileName; }
 
+    public String getImageAutor(){ return imageAutor; }
+    public void setImageAutor(String imageAutor){ this.imageAutor = imageAutor; }
+
+    public String getImageName(){ return imageName; }
+    public void setImageName(String imageName){ this.imageName = imageName; }
+
     public String getLanguage() { return language; }
     public void setLanguage(String language) { this.language = language; }
 
@@ -75,5 +77,8 @@ public class Pais implements Serializable {
 
     public int getPopulation() { return population; }
     public void setPopulation(int population) { this.population = population; }
+
+    public String getUrl(){ return url; }
+    public void setUrl(String url){ this.url = url; }
 
 }

@@ -3,6 +3,7 @@
     <color name="blue_primary">#005CA9</color>
     <color name="text_light_secondary">#3A3A3A</color>
     <color name="gray_primary">#656565</color>
+    <color name="gray_light_primary">#E0E0E0</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>

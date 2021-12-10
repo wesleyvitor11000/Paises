@@ -14,6 +14,8 @@ public class Pais implements Serializable {
 
     transient private Bitmap  icon;
 
+    private String imageFileName;
+
     //************icon, image, image-author, image-name.***********
 
     private String  language;
@@ -23,7 +25,7 @@ public class Pais implements Serializable {
     //*************url****************
 
 
-    public Pais(int area, String capital, String continent, String currency, String description, Bitmap icon, String language, String name, int population) {
+    public Pais(int area, String capital, String continent, String currency, String description, Bitmap icon, String imageFileName, String language, String name, int population) {
 
         this.area = area;
         this.capital = capital;
@@ -32,6 +34,7 @@ public class Pais implements Serializable {
         this.description = description;
 
         this.icon = icon;
+        this.imageFileName = imageFileName;
 
         //************icon, image, image-author, image-name.***********
 
@@ -60,6 +63,9 @@ public class Pais implements Serializable {
 
     public Bitmap getIcon(){ return icon; }
     public void setIcon(Bitmap icon){ this.icon = icon; }
+
+    public String getImageFileName(){ return imageFileName; }
+    public void setImageFileName(String imageFileName){ this.imageFileName = imageFileName; }
 
     public String getLanguage() { return language; }
     public void setLanguage(String language) { this.language = language; }

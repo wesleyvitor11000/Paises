@@ -6,12 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".DetalhesActivity">
 
-    <TextView
-        android:id="@+id/pais_teste"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/detalhes_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        android:layout_gravity="center"
-        android:text="Hello, World :)"/>
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+
+            app:contentScrim="@color/blue_primary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/country_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:layout_collapseMode="parallax"/>
+
+            
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/country_name_bar"
+
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                app:layout_collapseMode="pin"
+                app:title="Nome do Pais">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+
+                android:background="@color/white"/>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

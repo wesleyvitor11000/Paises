@@ -41,9 +41,11 @@ public class PaisesManager {
                 int    population = Integer.parseInt(getFieldValueFromText(paisAtual, "population:"));
 
                 String iconName = getFieldValueFromText(paisAtual, "icon:");
-                Bitmap icon = FileUtil.carregarImagem(c.getAssets(),iconName);
+                Bitmap icon = FileUtil.carregarImagem(c.getAssets(),"icon/" + iconName);
 
-                Pais pais = new Pais(area, capital, continent, currency, description, icon, language, name, population);
+                String imageFileName = getFieldValueFromText(paisAtual, "\nimage:");;
+
+                Pais pais = new Pais(area, capital, continent, currency, description, icon, imageFileName, language, name, population);
                 paises.add(pais);
 
                 if(end == -1) break;

@@ -43,13 +43,12 @@ public class FileUtil {
     }
 
     @Nullable
-    public static Bitmap carregarImagem(@NonNull AssetManager assetManager, @NonNull String ImageName){
+    public static Bitmap carregarImagem(@NonNull AssetManager assetManager, @NonNull String imageDir){
 
         Bitmap image = null;
-        String dir = "icon/" + ImageName;
 
         try{
-            InputStream inputStream = assetManager.open(dir);
+            InputStream inputStream = assetManager.open(imageDir);
 
             image = BitmapFactory.decodeStream(inputStream);
 

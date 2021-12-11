@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".sobreActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/topbar"
@@ -23,32 +23,25 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="12dp"
 
-            android:text="Países"
+            android:text="Sobre o Aplicativo"
             android:textSize="20sp"
             android:textColor="@color/white"/>
-
-        <ImageButton
-            android:id="@+id/about_button"
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_gravity="center|end"
-            android:layout_marginEnd="12dp"
-
-            android:src="@drawable/ic_outline_info_24"/>
 
 
     </androidx.appcompat.widget.Toolbar>
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/country_recycle"
-
+    <TextView
+        android:id="@+id/about_text"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
 
-        app:layout_constraintTop_toBottomOf="@id/topbar"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_margin="12dp"
+
+        style="@style/secondary_text"
+
+        android:autoLink="web"
+        android:textColorLink="#416aa7"
+
+        app:layout_constraintTop_toBottomOf="@id/topbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -143,7 +143,7 @@
                             android:layout_height="wrap_content"
 
                             style="@style/secondary_detail_text"
-                            android:text="Language"/>
+                            android:text="Língua Falada"/>
 
                         <View
                             android:layout_width="match_parent"

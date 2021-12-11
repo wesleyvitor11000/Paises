@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -18,8 +19,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         String paisesText = FileUtil.recuperarPaises(getAssets());
 
+        RecyclerView paises_recycle = findViewById(R.id.country_recycle);
+        ImageView about_button = findViewById(R.id.about_button);
         Toolbar topBar = findViewById(R.id.topbar);
 
         setSupportActionBar(topBar);
@@ -30,13 +34,23 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Pais> paises = PaisesManager.getPaisesFromString(this, paisesText);
 
-        RecyclerView paises_recycle = findViewById(R.id.country_recycle);
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 
 
         PaisesAdapter paisesAdapter = new PaisesAdapter(paises);
         paises_recycle.setLayoutManager(linearLayoutManager);
         paises_recycle.setAdapter(paisesAdapter);
+
+        about_button.setOnClickListener(view -> showAboutActivity());
+
+    }
+
+    private void showAboutActivity(){
+
+        Intent intent = new Intent(MainActivity.this, sobreActivity.class);
+        startActivity(intent);
+        finish();
 
     }
 }

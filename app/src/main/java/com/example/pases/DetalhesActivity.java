@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,7 +44,6 @@ public class DetalhesActivity extends AppCompatActivity {
         population_text.setText(String.valueOf(pais.getPopulation()));
         area_text.setText(String.valueOf(pais.getArea()));
         currency_text.setText(pais.getCurrency());
-
 
     }
 }

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Países">
         <activity
+            android:name=".sobreActivity"
+            android:exported="true" />
+        <activity
             android:name=".DetalhesActivity"
             android:exported="true" />
         <activity

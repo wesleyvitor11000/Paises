@@ -32,20 +32,6 @@
 
             </ImageView>
 
-            <ImageButton
-                android:id="@+id/image_about_button"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_gravity="top|end"
-                android:layout_margin="12dp"
-
-                android:background="?android:selectableItemBackground"
-                android:src="@drawable/ic_outline_info_24"
-                app:layout_collapseMode="pin" />
-
-            
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/country_name_bar"
 

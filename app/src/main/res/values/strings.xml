@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Países</string>
+    <string name="info_menu" translatable="false">menu_imagem</string>
 </resources>

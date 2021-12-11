@@ -1,10 +1,13 @@
 package com.example.pases;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -12,7 +15,12 @@ import android.widget.TextView;
 
 import com.google.android.material.appbar.AppBarLayout;
 
+import java.util.zip.Inflater;
+
 public class DetalhesActivity extends AppCompatActivity {
+
+    private Pais pais;
+    private Bitmap image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +28,16 @@ public class DetalhesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detalhes);
 
         AppBarLayout barLayout = findViewById(R.id.detalhes_appbar);
-        ImageButton  imageAboutButton = barLayout.findViewById(R.id.image_about_button);
+
+        //ImageButton  imageAboutButton = barLayout.findViewById(R.id.image_about_button);
+        Toolbar topbar = findViewById(R.id.country_name_bar);
+
+//        imageAboutButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                System.out.println("CLICOU AQUI!");
+//            }
+//        });
 
         ImageView country_image = findViewById(R.id.country_image);
         TextView description_text = findViewById(R.id.description_text);
@@ -35,20 +52,15 @@ public class DetalhesActivity extends AppCompatActivity {
 
         //*****TESTE********
         Bundle bundle = getIntent().getExtras();
-        Toolbar topbar = findViewById(R.id.country_name_bar);
-        Pais pais = (Pais)bundle.getSerializable("PAIS");
+
+        pais = (Pais)bundle.getSerializable("PAIS");
 
         topbar.setTitle(pais.getName());
 
+        setSupportActionBar(topbar);
 
-        Bitmap image = FileUtil.carregarImagem(getAssets(), "img/" + pais.getImageFileName());
+        image = FileUtil.carregarImagem(getAssets(), "img/" + pais.getImageFileName());
 
-        imageAboutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.out.println("CLICOU AQUI!");
-            }
-        });
 
         country_image.setImageBitmap(image);
         description_text.setText(pais.getDescription());
@@ -59,5 +71,21 @@ public class DetalhesActivity extends AppCompatActivity {
         area_text.setText(String.valueOf(pais.getArea()));
         currency_text.setText(pais.getCurrency());
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_bar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId() == R.id.about_menu){
+            MainActivity.showImageInfoDialog(pais, image, DetalhesActivity.this);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

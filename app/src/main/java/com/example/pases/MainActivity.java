@@ -1,14 +1,18 @@
 package com.example.pases;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -44,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
         about_button.setOnClickListener(view -> showAboutActivity());
 
+
+
     }
 
     private void showAboutActivity(){
@@ -53,4 +59,23 @@ public class MainActivity extends AppCompatActivity {
         finish();
 
     }
+    
+    public static void showImageInfoDialog(@NonNull Pais pais, @NonNull Bitmap img, @NonNull Context c){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(c);
+        builder.setTitle(pais.getName());
+//        final ImageView image = new ImageView(c);
+//        image.setImageBitmap(img);
+//
+//        final TextView imageName = new TextView(c);
+//        imageName.setText(pais.getImageName());
+//
+//        builder.setView(image);
+//        builder.setView(imageName);
+
+        System.out.println("MOSTRANDO DIALOGO DE DETALHES");
+        builder.show();
+
+    }
+
 }

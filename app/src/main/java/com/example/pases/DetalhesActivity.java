@@ -5,9 +5,12 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.text.method.LinkMovementMethod;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.material.appbar.AppBarLayout;
 
 public class DetalhesActivity extends AppCompatActivity {
 
@@ -15,6 +18,9 @@ public class DetalhesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes);
+
+        AppBarLayout barLayout = findViewById(R.id.detalhes_appbar);
+        ImageButton  imageAboutButton = barLayout.findViewById(R.id.image_about_button);
 
         ImageView country_image = findViewById(R.id.country_image);
         TextView description_text = findViewById(R.id.description_text);
@@ -24,6 +30,8 @@ public class DetalhesActivity extends AppCompatActivity {
         TextView population_text = findViewById(R.id.population_detail_text);
         TextView area_text = findViewById(R.id.area_detail_text);
         TextView currency_text = findViewById(R.id.currency_detail_text);
+
+
 
         //*****TESTE********
         Bundle bundle = getIntent().getExtras();
@@ -35,6 +43,12 @@ public class DetalhesActivity extends AppCompatActivity {
 
         Bitmap image = FileUtil.carregarImagem(getAssets(), "img/" + pais.getImageFileName());
 
+        imageAboutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("CLICOU AQUI!");
+            }
+        });
 
         country_image.setImageBitmap(image);
         description_text.setText(pais.getDescription());

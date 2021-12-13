@@ -15,6 +15,10 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="card_ripple" parent="Widget.MaterialComponents.CardView">
+        <item name="android:background">@drawable/ripple_effect</item>
+    </style>
+
     <style name="secondary_text" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/text_light_secondary</item>
         <item name="android:textSize">16sp</item>

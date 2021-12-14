@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import com.google.android.material.appbar.AppBarLayout;
 
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.zip.Inflater;
 
 public class DetalhesActivity extends AppCompatActivity {
@@ -59,16 +61,25 @@ public class DetalhesActivity extends AppCompatActivity {
 
         setSupportActionBar(topbar);
 
+        if(getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
+
         image = FileUtil.carregarImagem(getAssets(), "img/" + pais.getImageFileName());
 
+        String population = NumberFormat.getInstance(Locale.FRANCE).format(pais.getPopulation());
+
+        String area = NumberFormat.getInstance(Locale.ITALY).format(pais.getArea());
+        area = area.concat(" km²");
 
         country_image.setImageBitmap(image);
         description_text.setText(pais.getDescription());
         continent_text.setText(pais.getContinent());
         capital_text.setText(pais.getCapital());
         language_text.setText(pais.getLanguage());
-        population_text.setText(String.valueOf(pais.getPopulation()));
-        area_text.setText(String.valueOf(pais.getArea()));
+        population_text.setText(population);
+        area_text.setText(area);
         currency_text.setText(pais.getCurrency());
 
     }

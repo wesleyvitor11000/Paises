@@ -1,5 +1,6 @@
 package com.example.pases;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(MainActivity.this, sobreActivity.class);
         startActivity(intent);
-        finish();
+        //finish();
 
     }
     

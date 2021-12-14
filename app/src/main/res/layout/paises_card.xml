@@ -44,6 +44,8 @@
 
                 android:text="Name"
                 style="@style/secondary_text"
+
+                android:maxLines="1"
                 />
 
             <LinearLayout
@@ -69,6 +71,9 @@
 
                     android:layout_weight="0.5"
 
+                    android:maxLines="1"
+                    android:ellipsize="end"
+
                     android:text="continent"
                     style="@style/text_card_description"/>
 
@@ -79,6 +84,9 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="0.5"
+
+                    android:maxLines="1"
+                    android:ellipsize="end"
 
                     android:text="capital"
                     style="@style/text_card_description"/>
@@ -108,6 +116,9 @@
 
                     android:layout_weight="0.5"
 
+                    android:maxLines="1"
+                    android:ellipsize="end"
+
                     android:text="population"
                     style="@style/text_card_description"/>
 
@@ -118,6 +129,9 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="0.5"
+
+                    android:maxLines="1"
+                    android:ellipsize="end"
 
                     android:text="language"
                     style="@style/text_card_description"/>
@@ -147,6 +161,9 @@
 
                     android:layout_weight="0.5"
 
+                    android:maxLines="1"
+                    android:ellipsize="end"
+
                     android:text="currency"
                     style="@style/text_card_description"/>
 
@@ -157,6 +174,9 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="0.5"
+
+                    android:maxLines="1"
+                    android:ellipsize="end"
 
                     android:text="area"
                     style="@style/text_card_description"/>

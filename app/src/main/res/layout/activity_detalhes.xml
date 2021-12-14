@@ -39,7 +39,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 app:layout_collapseMode="pin"
-                app:title="Country Name">
+                app:title="Country Name"
+
+                android:theme="@style/toolbar_style">
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -220,7 +222,7 @@
                             android:layout_height="wrap_content"
 
                             style="@style/secondary_detail_text"
-                            android:text="Éxtensão Geográfica"/>
+                            android:text="Extensão Geográfica"/>
 
                         <View
                             android:layout_width="match_parent"

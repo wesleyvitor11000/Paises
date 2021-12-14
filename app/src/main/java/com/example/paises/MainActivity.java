@@ -1,6 +1,5 @@
-package com.example.pases;
+package com.example.paises;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +21,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -50,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         sortPaises(paises);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        
+
         PaisesAdapter paisesAdapter = new PaisesAdapter(paises);
         paises_recycle.setLayoutManager(linearLayoutManager);
         paises_recycle.setAdapter(paisesAdapter);

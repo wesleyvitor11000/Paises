@@ -1,4 +1,4 @@
-package com.example.pases;
+package com.example.paises;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,8 +8,6 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +15,6 @@ import com.google.android.material.appbar.AppBarLayout;
 
 import java.text.NumberFormat;
 import java.util.Locale;
-import java.util.zip.Inflater;
 
 public class DetalhesActivity extends AppCompatActivity {
 

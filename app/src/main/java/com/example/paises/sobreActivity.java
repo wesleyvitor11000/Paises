@@ -1,11 +1,9 @@
-package com.example.pases;
+package com.example.paises;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
 public class sobreActivity extends AppCompatActivity {

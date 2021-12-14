@@ -1,4 +1,4 @@
-package com.example.pases;
+package com.example.paises;
 
 import android.content.Context;
 import android.graphics.Bitmap;

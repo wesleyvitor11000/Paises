@@ -22,6 +22,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,28 +37,37 @@ public class MainActivity extends AppCompatActivity {
         String paisesText = FileUtil.recuperarPaises(getAssets());
 
         RecyclerView paises_recycle = findViewById(R.id.country_recycle);
-        //ImageView about_button = findViewById(R.id.about_button);
         Toolbar topBar = findViewById(R.id.topbar);
 
         setSupportActionBar(topBar);
+
 
         if(getSupportActionBar() != null){
             getSupportActionBar().setTitle("");
         }
 
         ArrayList<Pais> paises = PaisesManager.getPaisesFromString(this, paisesText);
-
+        sortPaises(paises);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-
-
+        
         PaisesAdapter paisesAdapter = new PaisesAdapter(paises);
         paises_recycle.setLayoutManager(linearLayoutManager);
         paises_recycle.setAdapter(paisesAdapter);
 
-        //about_button.setOnClickListener(view -> showAboutActivity());
 
 
+
+    }
+
+    private static void sortPaises(ArrayList<Pais> paises){
+
+        Collections.sort(paises, new Comparator<Pais>() {
+            @Override
+            public int compare(Pais pais, Pais pais2) {
+                return pais.getName().compareTo(pais2.getName());
+            }
+        });
 
     }
 
